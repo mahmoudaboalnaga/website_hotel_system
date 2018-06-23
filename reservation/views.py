@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Hotel,Customer,Reservation
 
-
+#list all hotels view
 def AllHotels(request):
     all_hotels="<h1><center> All Hotels </center></h1>"
     all_hotels +='<center><table border="solid 2px">'
@@ -27,6 +27,8 @@ def AllHotels(request):
     return HttpResponse(all_hotels)
 
 
+
+########list all customers view
 def DisplayCustomers(request):
     all_customers="<h1><center> Customers </center></h1>"
     all_customers +='<center><table border="solid 2px">'
@@ -42,7 +44,7 @@ def DisplayCustomers(request):
     return HttpResponse(all_customers)
 
 
-
+######list all reservation view
 def DisplayReservation(request):
     all_reservation="<h1><center> Reservations </center></h1>"
     all_reservation +='<center><table border="solid 2px">'
