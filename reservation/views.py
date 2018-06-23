@@ -61,3 +61,22 @@ def DisplayReservation(request):
         all_reservation+="</tr>"
     all_reservation += "</table></center>"
     return HttpResponse(all_reservation)
+
+
+######listr hotels in specific city view
+def HotelsInCity(request):
+    city="luxor"
+    hotel_in_city="<h1><center> Hotels in "+city+" </center></h1>"
+    hotel_in_city +='<center><table border="solid 2px">'
+    hotel_in_city+="<th> NO </th>"
+    hotel_in_city+="<th> Hotel Name</th>"
+    i=1
+    for hotel in Hotel.objects.all():
+        if hotel.hotel_city==city:
+            hotel_in_city+="<tr>"
+            hotel_in_city += "<td>" +str(i)+ "</td>"
+            hotel_in_city +="<td>" + hotel.hotel_name + "</td>"
+            hotel_in_city+="</tr>"
+            i+=1
+    hotel_in_city += "</table></center>"
+    return HttpResponse(hotel_in_city)
