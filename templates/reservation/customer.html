@@ -1,4 +1,15 @@
-{% extends "base.html"%} {% block content %}
-<h1>all customer list</h1>
+{% extends "base.html"%} {% block title %} Customers list {% endblock %} {% block content %}
+<table class="table " border="solid 2px">
+    <th> Name</th>
+    <th> Mobile</th>
+    {% for customer in customer %}
+    <tr>
+        <td>{{customer.customer_name}}</td>
+        <td>{{customer.customer_mobile}}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
 
 {% endblock %}

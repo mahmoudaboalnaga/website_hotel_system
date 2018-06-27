@@ -1,4 +1,19 @@
-{% extends "base.html"%} {% block content %}
-<h1>all hotels list</h1>
+{% extends "base.html"%} {% block title %} hotels list {% endblock %} {% block content %}
+<table class="cinereousTable" border="solid 2px">
+    <th> Name</th>
+    <th> CIty</th>
+    <th> Total_Rooms</th>
+    <th> Empty_Rooms</th>
+    {% for hotel in hotel %}
+    <tr>
+        <td>{{hotel.hotel_name}}</td>
+        <td>{{hotel.hotel_city}}</td>
+        <td>{{hotel.all_rooms}}</td>
+        <td>{{hotel.empty_rooms}}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
 
 {% endblock %}

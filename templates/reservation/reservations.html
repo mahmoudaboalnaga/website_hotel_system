@@ -1,4 +1,19 @@
-{% extends "base.html"%} {% block content %}
-<h1>all reservation list</h1>
+{% extends "base.html"%} {% block title %} Reservation list {% endblock %} {% block content %}
+<table class="cinereousTable" border="solid 2px">
+    <th> Customer Name</th>
+    <th> Hotel Name</th>
+    <th> From</th>
+    <th> To</th>
+    {% for reservation in reservation %}
+    <tr>
+        <td>{{reservation.c_name}}</td>
+        <td>{{reservation.h_name}}</td>
+        <td>{{reservation.start_time}}</td>
+        <td>{{reservation.end_time}}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
 
 {% endblock %}
