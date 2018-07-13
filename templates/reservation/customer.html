@@ -1,4 +1,20 @@
 {% extends "base.html"%} {% block title %} Customers list {% endblock %} {% block content %}
+<h1>Angular</h1>
+{% verbatim %}
+<div ng-controller="CustomerController">
+    <ul>
+        <div ng-repeat="customer in customers">
+            <li>
+                {{customer.customer_name}}
+            </li>
+        </div>
+    </ul>
+    <input type="text" ng-model="new_customer">
+    <button ng-click="add_new_customer(new_customer,customers)">Add</button>
+</div>
+{% endverbatim %}
+
+<h1>Django</h1>
 <table class="table " border="solid 2px">
     <th> Name</th>
     <th> Mobile</th>
