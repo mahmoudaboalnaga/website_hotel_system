@@ -1,4 +1,22 @@
 {% extends "base.html"%} {% block title %} hotels list {% endblock %} {% block content %}
+<h1>
+    angular
+</h1>
+{% verbatim %}
+<div ng-controller="HotelReservation">
+    <ul>
+        <div ng-repeat="hotel in hotels">
+            <li>
+                {{hotel.hotel_name}}
+            </li>
+        </div>
+    </ul>
+    <input type="text" ng-model="new_hotel">
+    <button ng-click="add_new_hotel(new_hotel,hotels)">Add</button>
+</div>
+{% endverbatim %}
+
+<h1>Django</h1>
 <table class="cinereousTable" border="solid 2px">
     <th> Name</th>
     <th> CIty</th>
